@@ -1,0 +1,56 @@
+.chart-container {
+  padding: 1.5rem;
+  background: #1e293b;
+  border-radius: 8px;
+  color: #e2e8f0;
+
+  h3 {
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+    font-size: 1.25rem;
+  }
+}
+
+.chart-bars {
+  display: flex;
+  align-items: flex-end;
+  gap: 1.5rem;
+  height: 200px;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid #334155;
+}
+
+.bar {
+  flex: 1;
+  max-width: 80px;
+  border-radius: 4px 4px 0 0;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding-top: 0.5rem;
+  transition: height 0.3s ease;
+
+  span {
+    font-size: 0.75rem;
+    color: #ffffff;
+    font-weight: 500;
+  }
+
+  &.approved {
+    background-color: #10b981;
+  }
+
+  &.pending {
+    background-color: #f59e0b;
+  }
+
+  &.rejected {
+    background-color: #ef4444;
+  }
+}
+
+.chart-summary {
+  margin-top: 1rem;
+  font-size: 0.875rem;
+  color: #94a3b8;
+}
