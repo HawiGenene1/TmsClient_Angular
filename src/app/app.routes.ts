@@ -2,7 +2,21 @@ import { Routes } from "@angular/router";
 
 export const routes: Routes = [
   {
+    path: "login",
+    loadComponent: () =>
+      import("./features/login/login.component").then(
+        (m) => m.LoginComponent
+      ),
+  },
+  {
     path: "dashboard",
+    loadComponent: () =>
+      import("./features/instructor-dashboard/instructor-dashboard.component").then(
+        (m) => m.InstructorDashboardComponent
+      ),
+  },
+  {
+    path: "student-dashboard",
     loadComponent: () =>
       import("./features/student-dashboard/student-dashboard.component").then(
         (m) => m.StudentDashboardComponent
@@ -45,7 +59,7 @@ export const routes: Routes = [
   },
   {
     path: "",
-    redirectTo: "dashboard",
+    redirectTo: "login",
     pathMatch: "full",
   },
 ];
