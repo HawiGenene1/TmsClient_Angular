@@ -1,0 +1,50 @@
+<div class="login-page">
+  <div class="login-card">
+    <div class="header-section">
+      <h1 class="main-title">Welcome to TMS</h1>
+      <p class="sub-title">Please sign in to continue</p>
+    </div>
+
+    <div class="inner-form-card">
+      <form [formGroup]="form" (ngSubmit)="onSubmit()" novalidate>
+        <div class="form-field">
+          <label for="username">Username</label>
+          <input
+            id="username"
+            type="text"
+            formControlName="username"
+            placeholder="Username"
+            autocomplete="username"
+          />
+        </div>
+
+        <div class="form-field">
+          <label for="password">Password</label>
+          <input
+            id="password"
+            type="password"
+            formControlName="password"
+            placeholder="Password"
+            autocomplete="current-password"
+          />
+        </div>
+
+        @if (errorMessage(); as error) {
+          <div class="error-banner" role="alert">
+            ⚠️ {{ error }}
+          </div>
+        }
+
+        <div class="submit-row">
+          <button type="submit" class="sign-in-btn" [disabled]="isSubmitting()">
+            @if (isSubmitting()) {
+              <span>Signing In...</span>
+            } @else {
+              <span>Sign In</span>
+            }
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

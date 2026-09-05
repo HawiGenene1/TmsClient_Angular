@@ -1,6 +1,9 @@
 <!-- Renders instantly on any connection speed -->
 <div class="dashboard-header">
-  <h1>Instructor Command Center</h1>
+  <div class="header-top">
+    <h1>Instructor Command Center</h1>
+    <button type="button" class="logout-btn" (click)="logout()">Logout</button>
+  </div>
   <div class="kpi-row">
     <div class="kpi-card">
       <span class="kpi-value">{{ store.entities().length }}</span>
