@@ -1,0 +1,33 @@
+.container {
+  max-width: 600px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+.grade-card {
+  padding: 1.5rem;
+  background: #1e293b;
+  color: #e2e8f0;
+  border: 1px solid #334155;
+  border-radius: 12px;
+}
+
+.full-width {
+  width: 100%;
+}
+
+.spinner-container {
+  display: flex;
+  justify-content: center;
+  padding: 1rem 0;
+}
+
+.status-message {
+  margin-top: 1rem;
+  padding: 0.75rem;
+  background: #0f172a;
+  border-radius: 8px;
+  color: #94a3b8;
+  font-size: 0.9rem;
+  border: 1px solid #334155;
+}
