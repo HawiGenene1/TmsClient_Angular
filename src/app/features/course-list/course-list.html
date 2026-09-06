@@ -1,0 +1,27 @@
+<div class="course-container">
+  <h2>Course Catalog</h2>
+
+  @if (store.isLoading()) {
+    <div class="spinner">Loading courses...</div>
+  }
+
+  @if (store.error()) {
+    <div class="error">{{ store.error() }}</div>
+  }
+
+  <div class="course-grid">
+    @for (course of store.entities(); track course.id) {
+      <div class="course-card">
+        <h3>{{ course.title }}</h3>
+        <p><strong>Code:</strong> {{ course.code }}</p>
+        <p><strong>Capacity:</strong> {{ course.maxCapacity }}</p>
+        <p><strong>Enrolled:</strong> {{ course.enrollmentCount }}</p>
+        <button class="btn-delete" (click)="deleteCourse(course.id)">
+          Delete
+        </button>
+      </div>
+    } @empty {
+      <p class="empty">No courses available.</p>
+    }
+  </div>
+</div>
